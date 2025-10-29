@@ -48,3 +48,10 @@ def remove(task_id):
     db.session.commit()
 
     return redirect(url_for('main.todo'))
+
+
+
+    
+    
+
+    

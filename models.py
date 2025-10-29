@@ -23,11 +23,15 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     status = db.Column(db.String(20), default='not-completed')
+    priority = db.Column(db.String(20), default='HIGH')
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def toggle(self):
         """Mark the task as done/undone."""
         self.status = 'completed' if self.status == 'not-completed' else 'not-completed'
 
+    def togglePriority(self):
+        self.priority = 'HIGH' if self.priority == 'LOW' else 'MEDIUM'
+        
     def __repr__(self):
-        return f"<Task id={self.id} title='{self.title}' status={self.status}>"
+        return f"<Task id={self.id} title='{self.title}' status={self.status} priority={self.priority}>"

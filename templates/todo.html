@@ -19,7 +19,7 @@
     <ul id="task-list"></ul>
     {% for task in tasks: %}
         <li class="{{ task.status }}">
-          <a href="/check/{{ task.id }}">{{ task.title }}</a>
+          <a href="/check/{{ task.id }}">{{ task.title }} {{task.priority}}</a>
           <!-- <a href="/remove/{{ task.id }}" class="remove-btn">x</a> -->
 
           <!-- remove using javascript -->
