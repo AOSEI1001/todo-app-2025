@@ -50,8 +50,11 @@ def remove(task_id):
     return redirect(url_for('main.todo'))
 
 
+@main_blueprint.route('/priority/<int: task_id>')
+@login_required
+def changePriority():
+    
+
 
     
-    
-
     

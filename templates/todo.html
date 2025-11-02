@@ -24,6 +24,7 @@
 
           <!-- remove using javascript -->
           <a href="#" class="remove-btn" onclick="removeTask({{ task.id }})" task-id="{{ task.id }}">🗑️</a>
+          {% comment %}           <a href="#" class="priority-btn" onclick="changePriority({{ task.priority }})" task-id="{{ task.id }}">🗑️</a> {% endcomment %}
         </li>
     {% endfor %}
   </div>
