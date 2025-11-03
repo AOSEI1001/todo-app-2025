@@ -27,3 +27,20 @@ function removeTask(taskId) {
       }
     });
 }
+
+// change priority
+function changePriority(taskId){
+  console.log(`Changing priority of task with ID: ${taskId}`);
+  fetch(`/priority/${taskId}`, { method: 'POST' })
+    .then(response => response.text())
+    .then(curPriority => {
+        const priorityBtn = document.querySelector(`.priority-btn[task-id="${taskId}"]`);
+
+        priorityBtn.innerText = curPriority;
+
+        
+    
+    });
+
+
+}

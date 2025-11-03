@@ -11,6 +11,10 @@ class Task:
     def toggle(self):
         """Mark the task as done/undone."""
         self.status = 'completed' if self.status == 'not-completed' else 'not-completed'
+        
+    def togglePriority(self):
+        self.priority = 'HIGH' if self.priority == 'MEDIUM' else 'LOW'
+        return self.priority
 
     def __repr__(self):
         return f"<Task id={self.id} title='{self.title}' status={self.status}>"

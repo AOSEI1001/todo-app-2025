@@ -50,10 +50,19 @@ def remove(task_id):
     return redirect(url_for('main.todo'))
 
 
-@main_blueprint.route('/priority/<int: task_id>')
+@main_blueprint.route('/priority/<int:task_id>', methods=['POST'])
 @login_required
-def changePriority():
-    
+def changePriority(task_id):
+    task = Task.query.get(task_id)
+
+    if task is None:
+        return "not found"
+
+    task.togglePriority()
+    db.session.commit()
+
+    return task.priority
+
 
 
     

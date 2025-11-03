@@ -19,14 +19,16 @@
     <ul id="task-list"></ul>
     {% for task in tasks: %}
         <li class="{{ task.status }}">
-          <a href="/check/{{ task.id }}">{{ task.title }} {{task.priority}}</a>
+          <a href="/check/{{ task.id }}">{{ task.title }}</a>
           <!-- <a href="/remove/{{ task.id }}" class="remove-btn">x</a> -->
 
           <!-- remove using javascript -->
           <a href="#" class="remove-btn" onclick="removeTask({{ task.id }})" task-id="{{ task.id }}">🗑️</a>
-          {% comment %}           <a href="#" class="priority-btn" onclick="changePriority({{ task.priority }})" task-id="{{ task.id }}">🗑️</a> {% endcomment %}
+          <button id="{{task.priority}}" class="priority-btn" onclick="changePriority({{ task.id }})" task-id="{{ task.id }}">{{task.priority}}</button>
+
         </li>
     {% endfor %}
+
   </div>
 
   <script src="{{ url_for('static', filename='todo.js') }}"></script>

@@ -71,4 +71,19 @@ body {
 
   /* priority */
 
-  
+  button#HIGH{
+
+    background-color: red;
+  }
+
+
+  .priority-btn#MEDIUM{
+
+    background-color: yellow;
+  }
+
+
+  button#LOW{
+
+    background-color: green;
+  }
